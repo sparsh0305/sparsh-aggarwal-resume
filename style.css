@@ -1,25 +1,83 @@
-/* ... previous CSS ... */
-
 body {
-    /* Subtle radial gradient background */
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
     background-image: radial-gradient(circle, #f8f9fa, #e9ecef);
-    background-attachment: fixed; /* Optional: keeps the background fixed during scroll */
+    background-attachment: fixed;
 }
 
-/* Navigation Hover Animation */
+.page-wrapper {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.section {
+    padding: 40px 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.section:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styling */
+header {
+    background-color: #fff;
+    padding: 20px 30px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
 nav a {
-    /* ... existing styles ... */
-    position: relative; /* For creating the underline effect */
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    position: relative;
 }
 
 nav a::before {
     content: '';
     position: absolute;
-    bottom: -2px; /* Adjust position of the underline */
+    bottom: -2px;
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: #007bff; /* Underline colour */
+    background-color: #007bff;
     transition: width 0.3s ease-in-out;
 }
 
@@ -27,31 +85,127 @@ nav a:hover::before {
     width: 100%;
 }
 
-/* Cool Dark Mode Toggle */
+/* Section Headings */
+h1, h2, h3 {
+    color: #212529;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.8em;
+}
+
+h2 {
+    font-size: 2.2em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.6em;
+    margin-top: 20px;
+}
+
+/* Text Styles */
+p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+address {
+    font-style: normal;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+address a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+ul li:before {
+    content: "\f105"; /* Font Awesome right arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #007bff;
+}
+
+/* Skills Section */
+#skills ul li:before {
+    content: "\f00c"; /* Check mark for skills */
+}
+
+/* Contact Section */
+#contact ul li a {
+    color: #007bff;
+    display: inline-flex;
+    align-items: center;
+}
+
+#contact ul li i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Dark Mode Toggle */
 .dark-mode-checkbox {
-    /* ... existing styles ... */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 25px;
+    opacity: 0;
+    z-index: 1;
 }
 
 .dark-mode-label {
-    /* ... existing styles ... */
-    width: 50px; /* Slightly wider */
-    height: 25px; /* Slightly taller */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    width: 50px;
+    height: 25px;
     border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
     padding: 0 7px;
-    justify-content: space-between; /* Spread the icons */
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
 }
 
 .toggle-indicator {
     background-color: #fff;
     width: 20px;
     height: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
 .dark-mode-label::before {
     content: '\f185'; /* Sun icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: #ffc107; /* Yellow colour for the sun */
+    color: #ffc107;
     font-size: 1.2em;
 }
 
@@ -59,32 +213,31 @@ nav a:hover::before {
     content: '\f186'; /* Moon icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: #fff; /* White colour for the moon */
+    color: #fff;
     font-size: 1.2em;
 }
 
 .dark-mode-checkbox:checked + .dark-mode-label {
-    background-color: #343a40; /* Dark background */
-    justify-content: space-between; /* Spread the icons */
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label::before {
-    color: #fff; /* White colour for the sun in dark mode */
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label::after {
-    color: #ffc107; /* Yellow colour for the moon in dark mode */
+    background-color: #343a40;
 }
 
 .dark-mode-checkbox:checked + .dark-mode-label .toggle-indicator {
-    transform: translateX(25px); /* Adjust for the wider label */
+    transform: translateX(25px);
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label::before {
+    color: #fff;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label::after {
+    color: #ffc107;
 }
 
 /* Download Resume Button */
 .download-button {
     display: inline-flex;
     align-items: center;
-    background-color: #28a745; /* Green colour */
+    background-color: #28a745;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -95,7 +248,7 @@ nav a:hover::before {
 }
 
 .download-button:hover {
-    background-color: #1e7e34; /* Darker green on hover */
+    background-color: #1e7e34;
 }
 
 .download-button i {
@@ -104,56 +257,56 @@ nav a:hover::before {
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #212529; /* Dark grey background */
-    color: #f8f9fa; /* Light text */
+    background-color: #212529;
+    color: #f8f9fa;
 }
 
 .page-wrapper.dark-mode {
-    background-color: #343a40; /* Darker grey background */
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Light shadow in dark mode */
+    background-color: #343a40;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 header.dark-mode {
-    background-color: #343a40; /* Darker header background */
-    box-shadow: 0 1px 8px rgba(255, 255, 255, 0.05); /* Light shadow in dark mode */
-    border-bottom: 1px solid #555; /* Darker border */
+    background-color: #343a40;
+    box-shadow: 0 1px 8px rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid #555;
 }
 
 nav.dark-mode a {
-    color: #e9ecef; /* Lighter text in dark mode */
+    color: #e9ecef;
 }
 
 nav.dark-mode a::before {
-    background-color: #00bfff; /* Different underline colour in dark mode */
+    background-color: #00bfff;
 }
 
 h1.dark-mode,
 h2.dark-mode,
 h3.dark-mode {
-    color: #fff; /* White headings in dark mode */
+    color: #fff;
 }
 
 .section.dark-mode:nth-child(even) {
-    background-color: #495057; /* Even darker grey for even sections */
+    background-color: #495057;
 }
 
 p.dark-mode,
 address.dark-mode {
-    color: #ccc; /* Lighter paragraph and address text */
+    color: #ccc;
 }
 
 address.dark-mode a {
-    color: #00bfff; /* Different link colour in dark mode */
+    color: #00bfff;
 }
 
 ul.dark-mode li:before {
-    color: #00bfff; /* Different list item colour in dark mode */
+    color: #00bfff;
 }
 
 .download-button.dark-mode {
-    background-color: #17a2b8; /* Cyan colour in dark mode */
+    background-color: #17a2b8;
 }
 
 .download-button.dark-mode:hover {
-    background-color: #138496; /* Darker cyan on hover */
+    background-color: #138496;
 }
