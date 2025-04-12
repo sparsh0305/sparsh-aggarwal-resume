@@ -6,13 +6,133 @@
     <meta name="description" content="Resume for Sparsh Aggarwal, BBA student specializing in Digital Business & Entrepreneurship.">
     <title>Sparsh Aggarwal - Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --section-bg: #f7f7f7;
+            --link-color: #007bff;
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --section-bg: #1e1e1e;
+            --link-color: #66aaff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            padding: 1rem;
+            background-color: var(--section-bg);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--link-color);
+            font-weight: 500;
+        }
+
+        .section {
+            padding: 2rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        h1, h2, h3 {
+            margin-top: 0;
+        }
+
+        address a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .box {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: var(--section-bg);
+            border-radius: 5px;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        .download-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Dark mode toggle styles */
+        .dark-mode-label {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: var(--section-bg);
+            border: 2px solid #888;
+            border-radius: 20px;
+            width: 50px;
+            height: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5px;
+            z-index: 1000;
+        }
+
+        .toggle-indicator {
+            width: 20px;
+            height: 20px;
+            background-color: var(--text-color);
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+
+        #darkModeToggle {
+            display: none;
+        }
+
+        #darkModeToggle:checked + .dark-mode-label .toggle-indicator {
+            transform: translateX(25px);
+        }
+
+        a i {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Dark/Light Mode Toggle -->
-    <input type="checkbox" id="darkModeToggle" class="dark-mode-checkbox">
+    <input type="checkbox" id="darkModeToggle">
     <label for="darkModeToggle" class="dark-mode-label">
         <span class="toggle-indicator"></span>
     </label>
@@ -44,7 +164,7 @@
                 Known for being a fast learner with strong analytical capabilities, effective communication skills, and a solution-oriented mindset.
                 Actively seeking opportunities to apply academic concepts to real-world challenges in finance, market research, and entrepreneurship.
             </p>
-            <a href="your-resume.pdf" download="Sparsh_Aggarwal_Resume" class="download-button">
+            <a href="/mnt/data/WhatsApp Image 2025-04-12 at 14.01.52_4853f615.jpg" download="Sparsh_Aggarwal_Resume.jpg" class="download-button">
                 <i class="fas fa-download"></i> Download Resume
             </a>
         </section>
@@ -103,12 +223,18 @@
             <h2>Contact Me</h2>
             <p>Connect with me:</p>
             <ul>
-                <li><a href="https://www.linkedin.com/in/sparsh-aggarwal-70337a28a" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
-                <li><a href="https://www.instagram.com/_sparshaggarwal/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/sparsh-aggarwal-70337a28a" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/_sparshaggarwal/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
             </ul>
         </section>
 
     </main>
 
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
 </body>
 </html>
