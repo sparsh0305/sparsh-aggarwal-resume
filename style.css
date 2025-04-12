@@ -1,200 +1,159 @@
+/* ... previous CSS ... */
+
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa; /* Light background */
-    color: #343a40; /* Dark text */
-    line-height: 1.6;
+    /* Subtle radial gradient background */
+    background-image: radial-gradient(circle, #f8f9fa, #e9ecef);
+    background-attachment: fixed; /* Optional: keeps the background fixed during scroll */
 }
 
-.page-wrapper {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 30px; /* Increased padding */
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px; /* Rounded corners for the main container */
-}
-
-.section {
-    padding: 40px 30px; /* Increased horizontal padding */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-.section:nth-child(even) {
-    background-color: #f9f9f9; /* Light grey for even sections */
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Header Styling */
-header {
-    background-color: #fff;
-    padding: 20px 30px; /* Increased padding */
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); /* Slightly stronger shadow */
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #eee; /* Light border at the bottom */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-nav ul li {
-    margin-left: 25px; /* Increased spacing */
-}
-
-nav ul li:first-child {
-    margin-left: 0;
-}
-
+/* Navigation Hover Animation */
 nav a {
-    text-decoration: none;
-    color: #495057; /* Slightly lighter text */
-    font-weight: 500; /* Medium font weight */
-    transition: color 0.3s ease-in-out;
+    /* ... existing styles ... */
+    position: relative; /* For creating the underline effect */
 }
 
-nav a:hover {
-    color: #007bff; /* Primary blue colour */
-}
-
-/* Section Headings */
-h1, h2, h3 {
-    color: #212529; /* Darker heading text */
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 2.8em; /* Larger main heading */
-}
-
-h2 {
-    font-size: 2.2em;
-    border-bottom: 2px solid #007bff; /* Add a line under the section title */
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 1.6em;
-    margin-top: 20px;
-}
-
-/* Text Styles */
-p {
-    color: #555;
-    margin-bottom: 15px;
-}
-
-address {
-    font-style: normal;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-address a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-address a:hover {
-    text-decoration: underline;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 20px;
-}
-
-ul li:before {
-    content: "\f105"; /* Font Awesome right arrow */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+nav a::before {
+    content: '';
     position: absolute;
+    bottom: -2px; /* Adjust position of the underline */
     left: 0;
-    top: 2px;
-    color: #007bff;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff; /* Underline colour */
+    transition: width 0.3s ease-in-out;
 }
 
-/* Skills Section */
-#skills ul li:before {
-    content: "\f00c"; /* Check mark for skills */
+nav a:hover::before {
+    width: 100%;
 }
 
-/* Contact Section */
-#contact ul li a {
-    color: #007bff;
-    display: inline-flex;
-    align-items: center;
-}
-
-#contact ul li i {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-/* Dark Mode Toggle (Basic Styling) */
+/* Cool Dark Mode Toggle */
 .dark-mode-checkbox {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 20px;
-    opacity: 0;
-    z-index: 1;
+    /* ... existing styles ... */
 }
 
 .dark-mode-label {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #333;
-    width: 40px;
-    height: 20px;
+    /* ... existing styles ... */
+    width: 50px; /* Slightly wider */
+    height: 25px; /* Slightly taller */
     border-radius: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 0 5px;
-    justify-content: flex-start;
-    transition: background-color 0.3s ease;
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label {
-    background-color: #007bff;
-    justify-content: flex-end;
+    padding: 0 7px;
+    justify-content: space-between; /* Spread the icons */
 }
 
 .toggle-indicator {
     background-color: #fff;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+    width: 20px;
+    height: 20px;
+}
+
+.dark-mode-label::before {
+    content: '\f185'; /* Sun icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #ffc107; /* Yellow colour for the sun */
+    font-size: 1.2em;
+}
+
+.dark-mode-label::after {
+    content: '\f186'; /* Moon icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #fff; /* White colour for the moon */
+    font-size: 1.2em;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label {
+    background-color: #343a40; /* Dark background */
+    justify-content: space-between; /* Spread the icons */
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label::before {
+    color: #fff; /* White colour for the sun in dark mode */
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label::after {
+    color: #ffc107; /* Yellow colour for the moon in dark mode */
 }
 
 .dark-mode-checkbox:checked + .dark-mode-label .toggle-indicator {
-    transform: translateX(20px);
+    transform: translateX(25px); /* Adjust for the wider label */
+}
+
+/* Download Resume Button */
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #28a745; /* Green colour */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.download-button:hover {
+    background-color: #1e7e34; /* Darker green on hover */
+}
+
+.download-button i {
+    margin-right: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #212529; /* Dark grey background */
+    color: #f8f9fa; /* Light text */
+}
+
+.page-wrapper.dark-mode {
+    background-color: #343a40; /* Darker grey background */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Light shadow in dark mode */
+}
+
+header.dark-mode {
+    background-color: #343a40; /* Darker header background */
+    box-shadow: 0 1px 8px rgba(255, 255, 255, 0.05); /* Light shadow in dark mode */
+    border-bottom: 1px solid #555; /* Darker border */
+}
+
+nav.dark-mode a {
+    color: #e9ecef; /* Lighter text in dark mode */
+}
+
+nav.dark-mode a::before {
+    background-color: #00bfff; /* Different underline colour in dark mode */
+}
+
+h1.dark-mode,
+h2.dark-mode,
+h3.dark-mode {
+    color: #fff; /* White headings in dark mode */
+}
+
+.section.dark-mode:nth-child(even) {
+    background-color: #495057; /* Even darker grey for even sections */
+}
+
+p.dark-mode,
+address.dark-mode {
+    color: #ccc; /* Lighter paragraph and address text */
+}
+
+address.dark-mode a {
+    color: #00bfff; /* Different link colour in dark mode */
+}
+
+ul.dark-mode li:before {
+    color: #00bfff; /* Different list item colour in dark mode */
+}
+
+.download-button.dark-mode {
+    background-color: #17a2b8; /* Cyan colour in dark mode */
+}
+
+.download-button.dark-mode:hover {
+    background-color: #138496; /* Darker cyan on hover */
 }
