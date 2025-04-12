@@ -1,241 +1,110 @@
-/* General Body Styling */
 body {
-    font-family: 'Poppins', sans-serif; /* Updated font for a modern look */
-    background-color: #f8f9fa;
-    color: #343a40;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #ffffff; /* White */
+    color: #000000; /* Black Text */
     line-height: 1.6;
 }
 
-/* Header Styling */
-header {
-    background-color: #fff;
-    padding: 20px 30px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
+body.dark-theme {
+    background-color: #000000; /* Black */
+    color: #ffffff; /* White Text */
 }
 
-/* Logo in Header */
-.header-logo {
-    max-width: 150px;
-    height: auto;
-}
-
-/* Navigation Styling */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #495057;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
-    font-size: 1.1em;
-}
-
-nav a:hover {
-    color: #007bff;
-}
-
-/* Main Page Wrapper Styling */
-.page-wrapper {
-    max-width: 1200px;
+.container {
+    max-width: 960px;
     margin: 20px auto;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f0f0f0; /* Light Gray Container */
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Styling - Square Boxes */
-.section {
-    background-color: #fff;
-    margin-bottom: 30px;
-    padding: 30px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    transition: all 0.3s ease;
+body.dark-theme .container {
+    background-color: #333333; /* Dark Gray Container */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
-.section:hover {
-    transform: scale(1.02); /* Slight zoom effect on hover */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Section Headings */
-h1, h2, h3 {
-    color: #212529;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-h1 {
-    font-size: 2.8em;
-}
-
-h2 {
-    font-size: 2.2em;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
+header {
+    background-color: #cccccc; /* Light Gray Header */
+    color: #000000; /* Black Text */
+    padding: 1em 0;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-h3 {
-    font-size: 1.6em;
-    margin-top: 20px;
+body.dark-theme header {
+    background-color: #444444; /* Darker Gray Header */
+    color: #ffffff; /* White Text */
 }
 
-/* Paragraph and List Styling */
-p {
-    color: #555;
-    margin-bottom: 15px;
-}
-
-ul {
+header nav ul {
     list-style: none;
     padding: 0;
+    margin: 1em 0;
+    display: flex; /* Enable Flexbox for horizontal layout */
+    justify-content: center; /* Center the items horizontally */
 }
 
-ul li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 20px;
+header nav ul li {
+    margin: 0 15px; /* Add spacing between the buttons */
 }
 
-ul li:before {
-    content: "\f105"; /* Font Awesome right arrow */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 2px;
-    color: #007bff;
-}
-
-/* Skills Section */
-#skills ul li:before {
-    content: "\f00c"; /* Check mark for skills */
-}
-
-/* Contact Section */
-#contact ul li a {
-    color: #007bff;
-    display: inline-flex;
-    align-items: center;
-}
-
-#contact ul li i {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-/* Button Styling */
-.download-button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 5px;
+header nav ul li a {
+    color: #0000ff; /* Blue Links in Light Theme */
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    padding: 8px 15px; /* Add some padding to make them look more like buttons */
+    border: 1px solid #0000ff; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
 }
 
-.download-button:hover {
-    background-color: #0056b3;
+body.dark-theme header nav ul li a {
+    color: #ffffff; /* White Links in Dark Theme */
+    border-color: #ffffff;
 }
 
-.download-button i {
-    margin-right: 8px;
+header nav ul li a:hover {
+    background-color: #e0f7fa; /* Light background on hover in light theme */
+    color: #0000ff;
 }
 
-/* Dark Mode Toggle */
-.dark-mode-checkbox {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 20px;
-    opacity: 0;
-    z-index: 1;
+body.dark-theme header nav ul li a:hover {
+    background-color: #444444; /* Dark background on hover in dark theme */
+    color: #ffffff;
 }
 
-.dark-mode-label {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #333;
-    width: 40px;
-    height: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 0 5px;
-    justify-content: flex-start;
-    transition: background-color 0.3s ease;
+
+main h2 {
+    color: #ff0000; /* Red Headings - to see if heading color works */
 }
 
-.dark-mode-checkbox:checked + .dark-mode-label {
-    background-color: #007bff;
-    justify-content: flex-end;
+body.dark-theme main h2 {
+    color: #ffaaaa; /* Light Red Headings */
 }
 
-.toggle-indicator {
-    background-color: #fff;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+/* Applying direct black color to all text elements in light theme */
+body,
+h1,
+h2,
+h3,
+p,
+a,
+li,
+button,
+div {
+    color: #000000 !important;
 }
 
-.dark-mode-checkbox:checked + .dark-mode-label .toggle-indicator {
-    transform: translateX(20px);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .page-wrapper {
-        padding: 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    header {
-        padding: 10px 20px;
-    }
-
-    .header-logo {
-        max-width: 120px;
-    }
-
-    .download-button {
-        width: 100%;
-        text-align: center;
-    }
+/* Applying direct white color to all text elements in dark theme */
+body.dark-theme,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme p,
+body.dark-theme a,
+body.dark-theme li,
+body.dark-theme button,
+body.dark-theme div {
+    color: #ffffff !important;
 }
