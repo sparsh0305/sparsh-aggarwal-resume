@@ -10,6 +10,7 @@ body {
   background-color: #f4f4f4;
   color: #333;
   line-height: 1.6;
+  padding: 0 20px;
 }
 
 header {
@@ -31,57 +32,102 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #ffdd57;
 }
 
-section {
-  padding: 40px 20px;
-  margin: 20px 0;
+nav ul li a.active {
+  color: #ffdd57;
 }
 
-section h1, section h2 {
-  text-align: center;
+/* Section Layout */
+.section {
+  padding: 40px 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2, h3 {
   color: #0056b3;
 }
 
-section h3 {
-  color: #003366;
+h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
 }
 
-section p {
-  text-align: center;
-  margin: 10px 0;
+h2 {
+  font-size: 28px;
+  margin-top: 40px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-top: 20px;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+  margin-left: 20px;
+  list-style-type: square;
 }
 
 ul li {
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 ul li a {
-  color: #0056b3;
   text-decoration: none;
+  color: #333;
 }
 
 ul li a:hover {
-  text-decoration: underline;
+  color: #0056b3;
 }
 
-div {
-  margin: 20px 0;
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-div ul {
-  margin-top: 10px;
+/* Social Media Icons */
+ul li i {
+  margin-right: 10px;
+  font-size: 20px;
 }
 
-div ul li {
-  margin: 5px 0;
+/* Responsive Layout */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
 }
