@@ -1,10 +1,10 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --accent: #0077cc;
+  --accent-color: #0077cc;
   --section-bg: #f4f8fb;
   --button-bg: #0077cc;
-  --button-text: #fff;
+  --button-text: #ffffff;
 }
 
 body {
@@ -12,27 +12,27 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--section-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--section-bg);
-  position: sticky;
-  top: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   z-index: 999;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .logo {
   font-size: 1.5rem;
-  color: var(--accent);
+  color: var(--accent-color);
 }
 
-.navbar nav a {
+.nav-links a {
   margin-left: 1.5rem;
   text-decoration: none;
   color: var(--text-color);
@@ -40,15 +40,14 @@ body {
   transition: color 0.3s ease;
 }
 
-.navbar nav a:hover {
-  color: var(--accent);
+.nav-links a:hover {
+  color: var(--accent-color);
 }
 
 .section {
   padding: 4rem 2rem;
-  background-color: var(--section-bg);
   text-align: center;
-  animation: fadeIn 1s ease;
+  background-color: var(--section-bg);
 }
 
 .contact-section {
@@ -59,7 +58,7 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 400px;
-  margin: 1rem auto;
+  margin: auto;
 }
 
 .contact-form input,
@@ -74,42 +73,64 @@ body {
 .contact-form button {
   background-color: var(--button-bg);
   color: var(--button-text);
-  border: none;
   padding: 0.75rem;
+  border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
   background-color: #005fa3;
 }
 
+/* Footer and Social Icons */
 footer {
   padding: 2rem;
   text-align: center;
   background-color: var(--section-bg);
-  color: var(--text-color);
 }
 
-.social-links a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: var(--accent);
-  transition: opacity 0.3s ease;
+.social-links {
+  margin-top: 0.5rem;
 }
 
-.social-links a:hover {
-  opacity: 0.7;
+.social-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
 }
 
-/* Animation */
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-icon.linkedin {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/174/174857.png');
+}
+
+.social-icon.instagram {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png');
+}
+
+.social-icon.twitter {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/733/733579.png');
+}
+
+/* Fade-In Animation */
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Toggle Dark Mode */
+/* Dark Mode Toggle */
 .toggle-label {
   position: fixed;
   top: 1rem;
@@ -123,18 +144,26 @@ footer {
   --bg-color: #0c0f1a;
   --text-color: #ffffff;
   --section-bg: #151c2f;
+  --accent-color: #4da6ff;
   --button-bg: #4da6ff;
   --button-text: #000000;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .navbar nav a {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
     margin: 0.5rem 0;
   }
 
