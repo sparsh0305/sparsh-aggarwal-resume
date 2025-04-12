@@ -1,200 +1,105 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa; /* Light background */
-    color: #343a40; /* Dark text */
-    line-height: 1.6;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume for Sparsh Aggarwal, BBA student specializing in Digital Business & Entrepreneurship.">
+    <title>Sparsh Aggarwal - Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
 
-.page-wrapper {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 30px; /* Increased padding */
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px; /* Rounded corners for the main container */
-}
+    <input type="checkbox" id="darkModeToggle" class="dark-mode-checkbox">
+    <label for="darkModeToggle" class="dark-mode-label">
+        <span class="toggle-indicator"></span>
+    </label>
 
-.section {
-    padding: 40px 30px; /* Increased horizontal padding */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.5s ease-out forwards;
-}
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-.section:nth-child(even) {
-    background-color: #f9f9f9; /* Light grey for even sections */
-}
+    <main class="page-wrapper">
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        <section id="about" class="section">
+            <h1>Sparsh Aggarwal</h1>
+            <address>
+                📍 Faridabad, Haryana | 📞 <a href="tel:+919811631672">+91 9811631672</a> | 📧 <a href="mailto:sparsh.aggarwal05@gmail.com">sparsh.aggarwal05@gmail.com</a>
+            </address>
+            <p>
+                A highly driven first-year BBA student at IIM Bangalore, specializing in Digital Business & Entrepreneurship.
+                Passionate about innovative business models, marketing strategies, and the evolving landscape of digital commerce.
+                Known for being a fast learner with strong analytical capabilities, effective communication skills, and a solution-oriented mindset.
+                Actively seeking opportunities to apply academic concepts to real-world challenges in finance, market research, and entrepreneurship.
+            </p>
+            <a href="your-resume.pdf" download="Sparsh_Aggarwal_Resume" class="download-button">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </section>
 
-/* Header Styling */
-header {
-    background-color: #fff;
-    padding: 20px 30px; /* Increased padding */
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); /* Slightly stronger shadow */
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #eee; /* Light border at the bottom */
-}
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div>
+                <h3>IIM Bangalore</h3>
+                <p><em>BBA - Digital Business & Entrepreneurship (Sep 2024 – Sep 2027)</em></p>
+                <ul>
+                    <li>Exposure to business, technology, and innovation.</li>
+                    <li>Coursework: Marketing Management, Financial Accounting, Business Strategy, Digital Transformation.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>DPS Ghaziabad, Faridabad</h3>
+                <p><em>Senior Secondary - Commerce (Apr 2021 – Mar 2023)</em></p>
+                <ul>
+                    <li>Focused on business studies, accountancy, and economics.</li>
+                    <li>Maintained consistent academic performance.</li>
+                </ul>
+            </div>
+        </section>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
-}
+        <section id="skills" class="section">
+            <h2>Professional Skills</h2>
+            <ul>
+                <li><strong>Marketing & Branding:</strong> Market trends, consumer behavior, brand positioning.</li>
+                <li><strong>Market Research & Analytics:</strong> Data collection, insights generation.</li>
+                <li><strong>Finance Fundamentals:</strong> Financial statements, budgeting basics.</li>
+                <li><strong>Business Operations:</strong> Inventory management, customer service.</li>
+                <li><strong>Leadership & Teamwork:</strong> Event coordination, team leadership.</li>
+                <li><strong>Soft Skills:</strong> Adaptability, time management, problem-solving.</li>
+            </ul>
+        </section>
 
-nav ul li {
-    margin-left: 25px; /* Increased spacing */
-}
+        <section id="experience" class="section">
+            <h2>Family Business Experience</h2>
+            <div>
+                <h3>Business Assistant</h3>
+                <p>Family-Owned Retail Venture, Faridabad, Haryana</p>
+                <ul>
+                    <li>Managed sales tracking, inventory, and customer interactions.</li>
+                    <li>Prepared financial summaries, maintained records.</li>
+                    <li>Conducted market research, implemented strategies.</li>
+                    <li>Gained insights into business operations and decision-making.</li>
+                </ul>
+            </div>
+        </section>
 
-nav ul li:first-child {
-    margin-left: 0;
-}
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <p>Connect with me:</p>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/sparsh-aggarwal-70337a28a" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+                <li><a href="https://www.instagram.com/_sparshaggarwal/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+            </ul>
+        </section>
 
-nav a {
-    text-decoration: none;
-    color: #495057; /* Slightly lighter text */
-    font-weight: 500; /* Medium font weight */
-    transition: color 0.3s ease-in-out;
-}
-
-nav a:hover {
-    color: #007bff; /* Primary blue colour */
-}
-
-/* Section Headings */
-h1, h2, h3 {
-    color: #212529; /* Darker heading text */
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-size: 2.8em; /* Larger main heading */
-}
-
-h2 {
-    font-size: 2.2em;
-    border-bottom: 2px solid #007bff; /* Add a line under the section title */
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 1.6em;
-    margin-top: 20px;
-}
-
-/* Text Styles */
-p {
-    color: #555;
-    margin-bottom: 15px;
-}
-
-address {
-    font-style: normal;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-address a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-address a:hover {
-    text-decoration: underline;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 8px;
-    position: relative;
-    padding-left: 20px;
-}
-
-ul li:before {
-    content: "\f105"; /* Font Awesome right arrow */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 2px;
-    color: #007bff;
-}
-
-/* Skills Section */
-#skills ul li:before {
-    content: "\f00c"; /* Check mark for skills */
-}
-
-/* Contact Section */
-#contact ul li a {
-    color: #007bff;
-    display: inline-flex;
-    align-items: center;
-}
-
-#contact ul li i {
-    margin-right: 10px;
-    font-size: 1.2em;
-}
-
-/* Dark Mode Toggle (Basic Styling) */
-.dark-mode-checkbox {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 20px;
-    opacity: 0;
-    z-index: 1;
-}
-
-.dark-mode-label {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background-color: #333;
-    width: 40px;
-    height: 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 0 5px;
-    justify-content: flex-start;
-    transition: background-color 0.3s ease;
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label {
-    background-color: #007bff;
-    justify-content: flex-end;
-}
-
-.toggle-indicator {
-    background-color: #fff;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label .toggle-indicator {
-    transform: translateX(20px);
-}
+    </main>
+</body>
+</html>
