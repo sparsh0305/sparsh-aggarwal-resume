@@ -2,30 +2,31 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-image: radial-gradient(circle, #f8f9fa, #e9ecef);
-    background-attachment: fixed;
+    background-color: #f8f9fa; /* Light background */
+    color: #343a40; /* Dark text */
+    line-height: 1.6;
 }
 
 .page-wrapper {
     max-width: 1200px;
     margin: 20px auto;
-    padding: 30px;
+    padding: 30px; /* Increased padding */
     background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
     display: flex;
     flex-direction: column;
-    border-radius: 8px;
+    border-radius: 8px; /* Rounded corners for the main container */
 }
 
 .section {
-    padding: 40px 30px;
+    padding: 40px 30px; /* Increased horizontal padding */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 0.5s ease-out forwards;
 }
 
 .section:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light grey for even sections */
 }
 
 @keyframes fadeIn {
@@ -38,12 +39,12 @@ body {
 /* Header Styling */
 header {
     background-color: #fff;
-    padding: 20px 30px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    padding: 20px 30px; /* Increased padding */
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); /* Slightly stronger shadow */
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /* Light border at the bottom */
 }
 
 nav ul {
@@ -55,7 +56,7 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 25px;
+    margin-left: 25px; /* Increased spacing */
 }
 
 nav ul li:first-child {
@@ -64,40 +65,28 @@ nav ul li:first-child {
 
 nav a {
     text-decoration: none;
-    color: #495057;
-    font-weight: 500;
+    color: #495057; /* Slightly lighter text */
+    font-weight: 500; /* Medium font weight */
     transition: color 0.3s ease-in-out;
-    position: relative;
 }
 
-nav a::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease-in-out;
-}
-
-nav a:hover::before {
-    width: 100%;
+nav a:hover {
+    color: #007bff; /* Primary blue colour */
 }
 
 /* Section Headings */
 h1, h2, h3 {
-    color: #212529;
+    color: #212529; /* Darker heading text */
     margin-bottom: 15px;
 }
 
 h1 {
-    font-size: 2.8em;
+    font-size: 2.8em; /* Larger main heading */
 }
 
 h2 {
     font-size: 2.2em;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid #007bff; /* Add a line under the section title */
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
@@ -166,13 +155,13 @@ ul li:before {
     font-size: 1.2em;
 }
 
-/* Dark Mode Toggle */
+/* Dark Mode Toggle (Basic Styling) */
 .dark-mode-checkbox {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 50px;
-    height: 25px;
+    width: 40px;
+    height: 20px;
     opacity: 0;
     z-index: 1;
 }
@@ -182,131 +171,30 @@ ul li:before {
     top: 20px;
     left: 20px;
     background-color: #333;
-    width: 50px;
-    height: 25px;
+    width: 40px;
+    height: 20px;
     border-radius: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    padding: 0 7px;
-    justify-content: space-between;
+    padding: 0 5px;
+    justify-content: flex-start;
     transition: background-color 0.3s ease;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label {
+    background-color: #007bff;
+    justify-content: flex-end;
 }
 
 .toggle-indicator {
     background-color: #fff;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
-.dark-mode-label::before {
-    content: '\f185'; /* Sun icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: #ffc107;
-    font-size: 1.2em;
-}
-
-.dark-mode-label::after {
-    content: '\f186'; /* Moon icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: #fff;
-    font-size: 1.2em;
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label {
-    background-color: #343a40;
-}
-
 .dark-mode-checkbox:checked + .dark-mode-label .toggle-indicator {
-    transform: translateX(25px);
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label::before {
-    color: #fff;
-}
-
-.dark-mode-checkbox:checked + .dark-mode-label::after {
-    color: #ffc107;
-}
-
-/* Download Resume Button */
-.download-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #28a745;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.download-button:hover {
-    background-color: #1e7e34;
-}
-
-.download-button i {
-    margin-right: 10px;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #212529;
-    color: #f8f9fa;
-}
-
-.page-wrapper.dark-mode {
-    background-color: #343a40;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-header.dark-mode {
-    background-color: #343a40;
-    box-shadow: 0 1px 8px rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid #555;
-}
-
-nav.dark-mode a {
-    color: #e9ecef;
-}
-
-nav.dark-mode a::before {
-    background-color: #00bfff;
-}
-
-h1.dark-mode,
-h2.dark-mode,
-h3.dark-mode {
-    color: #fff;
-}
-
-.section.dark-mode:nth-child(even) {
-    background-color: #495057;
-}
-
-p.dark-mode,
-address.dark-mode {
-    color: #ccc;
-}
-
-address.dark-mode a {
-    color: #00bfff;
-}
-
-ul.dark-mode li:before {
-    color: #00bfff;
-}
-
-.download-button.dark-mode {
-    background-color: #17a2b8;
-}
-
-.download-button.dark-mode:hover {
-    background-color: #138496;
+    transform: translateX(20px);
 }
