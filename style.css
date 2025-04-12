@@ -1,89 +1,62 @@
 body {
-    font-family: sans-serif; /* A common and clean sans-serif font */
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light grey background */
-    color: #333; /* Dark grey text */
+    background-color: #f8f9fa; /* Light background */
+    color: #343a40; /* Dark text */
     line-height: 1.6;
 }
 
 .page-wrapper {
-    max-width: 1200px; /* Limit the width of the content */
-    margin: 20px auto; /* Center the content with some top/bottom margin */
-    padding: 20px;
-    background-color: #fff; /* White background for the main content area */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    display: flex; /* Enable Flexbox for the main layout */
-    flex-direction: column; /* Stack sections vertically by default */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px; /* Increased padding */
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px; /* Rounded corners for the main container */
 }
 
 .section {
-    padding: 40px 20px;
+    padding: 40px 30px; /* Increased horizontal padding */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
 }
 
-#about {
-    display: flex; /* Arrange name/bio and image side-by-side */
-    align-items: center; /* Vertically align items in the center */
-    position: relative; /* For positioning the image */
-    padding-bottom: 20px; /* Adjust padding as needed */
+.section:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey for even sections */
 }
 
-#about h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #222; /* Darker heading text */
-}
-
-#about address {
-    font-style: normal;
-    margin-bottom: 15px;
-    color: #555;
-}
-
-#about address a {
-    color: #007bff; /* Example link color */
-    text-decoration: none;
-}
-
-#about address a:hover {
-    text-decoration: underline;
-}
-
-#about p {
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-#about img {
-    width: 200px; /* Adjust as needed */
-    height: auto;
-    border-radius: 5px; /* Optional: slightly rounded corners */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for the image */
-    position: absolute; /* Position the image */
-    right: 20px; /* Align to the right of the section */
-    top: 20px; /* Align to the top of the section */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Header Styling */
 header {
-    background-color: #fff; /* White header background */
-    padding: 15px 20px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
-    position: sticky; /* Keep the header at the top on scroll */
+    background-color: #fff;
+    padding: 20px 30px; /* Increased padding */
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05); /* Slightly stronger shadow */
+    position: sticky;
     top: 0;
-    z-index: 100; /* Ensure it stays above other content */
+    z-index: 100;
+    border-bottom: 1px solid #eee; /* Light border at the bottom */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Arrange navigation items horizontally */
-    justify-content: flex-end; /* Push items to the right */
+    display: flex;
+    justify-content: flex-end;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px; /* Increased spacing */
 }
 
 nav ul li:first-child {
@@ -92,11 +65,136 @@ nav ul li:first-child {
 
 nav a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease; /* Smooth color transition on hover */
+    color: #495057; /* Slightly lighter text */
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: #007bff; /* Example hover color */
+    color: #007bff; /* Primary blue colour */
+}
+
+/* Section Headings */
+h1, h2, h3 {
+    color: #212529; /* Darker heading text */
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.8em; /* Larger main heading */
+}
+
+h2 {
+    font-size: 2.2em;
+    border-bottom: 2px solid #007bff; /* Add a line under the section title */
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.6em;
+    margin-top: 20px;
+}
+
+/* Text Styles */
+p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+address {
+    font-style: normal;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+address a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+ul li:before {
+    content: "\f105"; /* Font Awesome right arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #007bff;
+}
+
+/* Skills Section */
+#skills ul li:before {
+    content: "\f00c"; /* Check mark for skills */
+}
+
+/* Contact Section */
+#contact ul li a {
+    color: #007bff;
+    display: inline-flex;
+    align-items: center;
+}
+
+#contact ul li i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Dark Mode Toggle (Basic Styling) */
+.dark-mode-checkbox {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 20px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.dark-mode-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    width: 40px;
+    height: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label {
+    background-color: #007bff;
+    justify-content: flex-end;
+}
+
+.toggle-indicator {
+    background-color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-checkbox:checked + .dark-mode-label .toggle-indicator {
+    transform: translateX(20px);
 }
